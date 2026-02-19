@@ -32,7 +32,7 @@ const OverOns = () => {
             </div>
 
             {/* Meet the Owners - Green Section */}
-            <section className="py-16 bg-feduzzi-olive text-white px-4 md:px-8 relative overflow-hidden">
+            <section className="py-16 bg-[#7F9F7B] text-white px-4 md:px-8 relative overflow-hidden">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
                     <div className="flex-1 space-y-6">
                         <span className="inline-block py-1 px-3 border border-white/30 text-white rounded-full text-xs font-bold uppercase tracking-widest">
@@ -68,7 +68,7 @@ const OverOns = () => {
             </section>
 
             {/* Green Quote Section - Compact */}
-            <div className="bg-feduzzi-olive text-white py-16 px-4 border-t border-white/10">
+            <div className="bg-[#7F9F7B] text-white py-16 px-4 border-t border-white/10">
                 <div className="max-w-3xl mx-auto text-center">
                     <h2 className="font-serif text-2xl md:text-4xl leading-tight italic text-white drop-shadow-md">
                         “In cucina si buttano le briglie della creatività”

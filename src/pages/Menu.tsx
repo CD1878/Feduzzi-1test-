@@ -70,7 +70,7 @@ const Menu = () => {
                 </div>
             </div>
             {/* Tab Navigation - Playful Styling */}
-            <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm py-4">
+            <div className="sticky top-[70px] md:top-[100px] z-30 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm py-4">
                 <div className="flex justify-center flex-wrap gap-4 px-4 overflow-x-auto">
                     {['broodjes', 'maaltijden', 'traiteur'].map((tab) => (
                         <button
