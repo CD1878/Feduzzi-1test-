@@ -21,9 +21,9 @@ const Header = () => {
 
     return (
         <>
-            <header className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-gradient-header text-white'} ${mobileMenuOpen ? 'bg-transparent' : ''}`}>
+            <header className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-feduzzi-red shadow-md' : 'bg-feduzzi-red'} ${mobileMenuOpen ? 'bg-transparent' : ''}`}>
                 {!mobileMenuOpen && <AnnouncementBar />}
-                <div className={`px-4 md:px-8 py-4 md:py-6 flex justify-between items-center transition-colors duration-300 ${isScrolled ? 'text-black' : 'text-white'}`}>
+                <div className={`px-4 md:px-8 py-4 md:py-6 flex justify-between items-center transition-colors duration-300 text-white`}>
 
                     {/* Logo */}
                     <div className="w-32 md:w-48 relative z-50">

@@ -1,31 +1,38 @@
-import { VIDEO_URL, IMAGES } from '../constants/images';
+import { IMAGES } from '../constants/images';
 
 const Hero = () => {
     return (
         <section className="relative w-full h-[80vh] md:h-screen overflow-hidden bg-black">
-            <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute top-0 left-0 w-full h-full object-cover opacity-60"
-                poster={IMAGES.meatballs} // Fallback
-            >
-                <source src={VIDEO_URL} type="video/mp4" />
-            </video>
+            {/* Background Video */}
+            <div className="absolute inset-0 w-full h-full">
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover opacity-80"
+                    poster={IMAGES.meatballs} // Fallback image
+                >
+                    <source src="/videos/hero.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
 
-            <div className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-4">
-                <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl mb-4 font-light tracking-wide">
+                {/* Overlay gradient for better text readability */}
+                <div className="absolute inset-0 bg-black/30"></div>
+            </div>
+
+            <div className="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-4 animate-fadeIn">
+                <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl mb-6 font-light tracking-wide shadow-sm">
                     Fresh Italian Take-Away & Catering
                 </h1>
-                <p className="font-sans text-base md:text-xl font-light tracking-wide mb-10 opacity-90">
+                <p className="font-sans text-base md:text-xl font-light tracking-wide mb-12 opacity-95 shadow-sm max-w-2xl">
                     Traiteur - Lunch - Italiaanse Delicatessen
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                    <a href="#" className="bg-feduzzi-red hover:bg-feduzzi-red-hover text-white px-8 py-3 uppercase text-xs font-bold tracking-widest transition-colors">
+                <div className="flex flex-col sm:flex-row gap-6">
+                    <a href="/catering" className="bg-feduzzi-red hover:bg-white hover:text-feduzzi-red border border-transparent hover:border-feduzzi-red text-white px-10 py-4 uppercase text-xs font-bold tracking-widest transition-all duration-300 rounded-sm">
                         Bestel catering
                     </a>
-                    <a href="#" className="bg-feduzzi-red hover:bg-feduzzi-red-hover text-white px-8 py-3 uppercase text-xs font-bold tracking-widest transition-colors">
+                    <a href="/menu" className="bg-transparent border border-white hover:bg-white hover:text-feduzzi-dark text-white px-10 py-4 uppercase text-xs font-bold tracking-widest transition-all duration-300 rounded-sm">
                         Bestel broodjes
                     </a>
                 </div>
