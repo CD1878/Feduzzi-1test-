@@ -46,7 +46,7 @@ const WerkenBij = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
                     <div className="space-y-8">
                         <img
-                            src={IMAGES.chefs}
+                            src="/images/team.jpg"
                             alt="Het Feduzzi Team"
                             className="w-full h-96 object-cover rounded-lg shadow-lg"
                         />
