@@ -1,5 +1,6 @@
-import { MapPin, Phone, Clock, Mail, Navigation } from 'lucide-react';
+import { MapPin, Phone, Clock, Navigation } from 'lucide-react';
 import { IMAGES } from '../constants/images';
+import { useLanguage } from '../context/LanguageContext';
 
 const LOCATIONS = [
     {
@@ -34,19 +35,21 @@ const LOCATIONS = [
 ];
 
 const Vestigingen = () => {
+    const { t } = useLanguage();
+
     return (
-        <div className="bg-white min-h-screen">
+        <div className="bg-white">
             {/* Header */}
             <div className="pt-32 pb-16 bg-feduzzi-cream relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-64 h-64 bg-feduzzi-olive/10 rounded-br-full"></div>
                 <div className="text-center relative z-10">
-                    <span className="text-feduzzi-red font-bold uppercase tracking-widest text-xs mb-4 block">Kom langs</span>
-                    <h1 className="font-serif text-5xl md:text-6xl text-feduzzi-dark">Onze Vestigingen</h1>
+                    <span className="text-feduzzi-red font-bold uppercase tracking-widest text-xs mb-4 block">{t('kom_langs')}</span>
+                    <h1 className="font-serif text-5xl md:text-6xl text-feduzzi-dark">{t('onze_vestigingen')}</h1>
                 </div>
             </div>
 
             {/* Locations */}
-            <div className="max-w-7xl mx-auto px-4 md:px-8 py-20 space-y-32">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 space-y-16">
                 {LOCATIONS.map((loc, index) => (
                     <div key={index} className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center`}>
 
@@ -81,7 +84,7 @@ const Vestigingen = () => {
                                 <div className="flex items-start p-6 bg-feduzzi-cream rounded-xl hover:shadow-md transition-shadow">
                                     <MapPin className="text-feduzzi-red mt-1 mr-4 flex-shrink-0" size={24} />
                                     <div>
-                                        <h3 className="font-bold text-gray-900 mb-1">Locatie</h3>
+                                        <h3 className="font-bold text-gray-900 mb-1">{t('locatie')}</h3>
                                         <p className="text-gray-600 leading-relaxed">
                                             {loc.address}<br />
                                             {loc.zip}
@@ -92,7 +95,7 @@ const Vestigingen = () => {
                                             rel="noopener noreferrer"
                                             className="inline-flex items-center text-feduzzi-red text-xs font-bold uppercase tracking-widest mt-3 hover:underline"
                                         >
-                                            <Navigation size={14} className="mr-2" /> Routebeschrijving
+                                            <Navigation size={14} className="mr-2" /> {t('routebeschrijving')}
                                         </a>
                                     </div>
                                 </div>
@@ -101,7 +104,7 @@ const Vestigingen = () => {
                                     <div className="p-6 border border-gray-100 rounded-xl hover:border-feduzzi-olive transition-colors">
                                         <div className="flex items-center mb-3">
                                             <Phone className="text-feduzzi-olive mr-3" size={20} />
-                                            <h3 className="font-bold text-gray-900">Contact</h3>
+                                            <h3 className="font-bold text-gray-900">{t('contact')}</h3>
                                         </div>
                                         <div className="text-sm text-gray-600 space-y-1">
                                             <a href={`tel:${loc.phone}`} className="block hover:text-feduzzi-red">{loc.phone}</a>
@@ -112,7 +115,7 @@ const Vestigingen = () => {
                                     <div className="p-6 border border-gray-100 rounded-xl hover:border-feduzzi-olive transition-colors">
                                         <div className="flex items-center mb-3">
                                             <Clock className="text-feduzzi-olive mr-3" size={20} />
-                                            <h3 className="font-bold text-gray-900">Openingstijden</h3>
+                                            <h3 className="font-bold text-gray-900">{t('openingstijden')}</h3>
                                         </div>
                                         <ul className="text-sm text-gray-600 space-y-1">
                                             {loc.hours.map((hour, i) => (
@@ -127,55 +130,54 @@ const Vestigingen = () => {
                 ))}
             </div>
 
-            {/* Contact Form Section */}
-            <div className="bg-feduzzi-olive py-20 relative overflow-hidden">
+            {/* Contact Form Section - Reduced whitespace */}
+            <div className="bg-feduzzi-olive py-12 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-bl-full"></div>
                 <div className="max-w-4xl mx-auto px-4 md:px-8 relative z-10">
                     <div className="text-center mb-12">
-                        <span className="text-white/80 font-bold uppercase tracking-widest text-xs mb-4 block">Heeft u een vraag?</span>
-                        <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Neem Contact Op</h2>
+                        <span className="text-white/80 font-bold uppercase tracking-widest text-xs mb-4 block">{t('heeft_u_een_vraag')}</span>
+                        <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">{t('neem_contact_op')}</h2>
                         <p className="text-white/90 text-lg max-w-2xl mx-auto">
-                            Wilt u meer weten over onze catering, producten of heeft u een andere vraag?
-                            Vul het formulier in en wij nemen zo snel mogelijk contact met u op.
+                            {t('vestigingen_intro_vraag')}
                         </p>
                     </div>
 
                     <form className="bg-white rounded-2xl shadow-xl p-8 md:p-12 space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Naam *</label>
-                                <input type="text" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-feduzzi-olive focus:bg-white transition-all outline-none rounded-lg" placeholder="Uw naam" required />
+                                <label className="block text-xs font-bold uppercase text-gray-500 mb-2">{t('naam')} *</label>
+                                <input type="text" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-feduzzi-olive focus:bg-white transition-all outline-none rounded-lg" required />
                             </div>
                             <div>
-                                <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Email *</label>
-                                <input type="email" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-feduzzi-olive focus:bg-white transition-all outline-none rounded-lg" placeholder="uw@email.nl" required />
+                                <label className="block text-xs font-bold uppercase text-gray-500 mb-2">{t('email')} *</label>
+                                <input type="email" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-feduzzi-olive focus:bg-white transition-all outline-none rounded-lg" required />
                             </div>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Telefoonnummer</label>
-                                <input type="tel" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-feduzzi-olive focus:bg-white transition-all outline-none rounded-lg" placeholder="06 12345678" />
+                                <label className="block text-xs font-bold uppercase text-gray-500 mb-2">{t('telefoonnummer')}</label>
+                                <input type="tel" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-feduzzi-olive focus:bg-white transition-all outline-none rounded-lg" />
                             </div>
                             <div>
-                                <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Onderwerp</label>
+                                <label className="block text-xs font-bold uppercase text-gray-500 mb-2">{t('onderwerp')}</label>
                                 <select className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-feduzzi-olive focus:bg-white transition-all outline-none rounded-lg">
-                                    <option>Algemene vraag</option>
+                                    <option>{t('algemene_vraag')}</option>
                                     <option>Catering</option>
-                                    <option>Sollicitatie</option>
-                                    <option>Overige</option>
+                                    <option>{t('sollicitatie')}</option>
+                                    <option>{t('overig')}</option>
                                 </select>
                             </div>
                         </div>
 
                         <div>
-                            <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Bericht *</label>
-                            <textarea rows={5} className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-feduzzi-olive focus:bg-white transition-all outline-none rounded-lg" placeholder="Waar kunnen we u mee helpen?" required></textarea>
+                            <label className="block text-xs font-bold uppercase text-gray-500 mb-2">{t('bericht')} *</label>
+                            <textarea rows={5} className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-feduzzi-olive focus:bg-white transition-all outline-none rounded-lg" required></textarea>
                         </div>
 
                         <div className="text-center pt-4">
                             <button type="submit" className="bg-feduzzi-red text-white py-4 px-12 uppercase font-bold tracking-widest hover:bg-feduzzi-dark transition-colors rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                                Verstuur Bericht
+                                {t('verstuur_bericht')}
                             </button>
                         </div>
                     </form>

@@ -1,6 +1,9 @@
 import { IMAGES } from '../constants/images';
+import { useLanguage } from '../context/LanguageContext';
 
 const OverOns = () => {
+    const { t } = useLanguage();
+
     return (
         <div className="bg-white min-h-screen">
             {/* Hero Section - Playful Layout */}
@@ -9,14 +12,13 @@ const OverOns = () => {
 
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
                     <div className="flex-1">
-                        <span className="text-feduzzi-red font-bold uppercase tracking-widest text-xs mb-3 block">Onze Geschiedenis</span>
+                        <span className="text-feduzzi-red font-bold uppercase tracking-widest text-xs mb-3 block">{t('over_ons')}</span>
                         <h1 className="font-serif text-4xl md:text-6xl text-feduzzi-dark mb-6 leading-none">
-                            Al sinds 1981 <br />
-                            <span className="italic text-feduzzi-olive text-3xl md:text-5xl">een begrip in Amsterdam</span>
+                            {t('over_ons_titel')} <br />
+                            <span className="italic text-feduzzi-olive text-3xl md:text-5xl">{t('over_ons_subtitel')}</span>
                         </h1>
                         <p className="font-sans text-gray-700 text-lg leading-relaxed mb-6">
-                            Feduzzi Mercato Italiano is een Italiaanse delicatessenwinkel, lunchroom en traiteur in één.
-                            Wat begon als een kleine speciaalzaak is uitgegroeid tot dé plek voor authentiek Italiaans genieten.
+                            {t('over_ons_intro')}
                         </p>
                     </div>
 
@@ -34,34 +36,30 @@ const OverOns = () => {
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
                     <div className="flex-1 space-y-6">
                         <span className="inline-block py-1 px-3 border border-white/30 text-white rounded-full text-xs font-bold uppercase tracking-widest">
-                            Het Team
+                            {t('het_team')}
                         </span>
-                        <h2 className="font-serif text-3xl md:text-5xl text-white leading-tight">
-                            Passie voor <span className="text-feduzzi-cream italic">Italiaans Eten</span>
+                        <h2 className="font-serif text-3xl md:text-5xl text-white leading-tight drop-shadow-sm">
+                            {t('passie_voor')} <span className="text-white italic">{t('italiaans_eten')}</span>
                         </h2>
 
                         <div className="p-8 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg">
-                            <h3 className="font-serif text-2xl text-feduzzi-cream mb-4">Wie zijn wij?</h3>
-                            <p className="text-white/90 leading-relaxed text-lg">
-                                Wij zijn <strong>Nick en Nees Oostrum</strong>, twee broers die samen hun passie voor horeca, ondernemen en Italiaans eten delen.
-                                Nick heeft 10 jaar ervaring met Italiaans eten, Italiaanse delicatessen en de Italiaanse cultuur.
-                                Nees deed zijn ervaring op bij verschillende restaurants van Ron Blaauw.
+                            <h3 className="font-serif text-2xl text-white mb-4 drop-shadow-sm">{t('wie_zijn_wij')}</h3>
+                            <p className="text-white leading-relaxed text-lg drop-shadow-sm">
+                                {t('wie_zijn_wij_tekst')}
                                 <br /><br />
-                                <span className="font-serif italic text-white/80">"Samen met ons team zorgen wij voor een warme, authentieke Italiaanse ervaring."</span>
+                                <span className="font-serif italic text-white/90">{t('quote_team')}</span>
                             </p>
                         </div>
                     </div>
 
                     <div className="flex-1 relative mt-8 md:mt-0">
-                        {/* Image of owners/team would go here, reusing shelf for now but ideally a different one */}
                         <div className="relative z-10 transform -rotate-1 hover:rotate-0 transition-transform duration-500">
                             <img src={IMAGES.shelf} alt="Nick & Nees" className="w-full h-[500px] object-cover rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-500" />
 
-                            {/* Floating Card for Cookies */}
                             <div className="absolute -bottom-8 -right-8 bg-white p-5 rounded-xl shadow-xl max-w-xs border-l-4 border-feduzzi-red hidden md:block transform rotate-2 text-feduzzi-dark">
-                                <h4 className="font-serif text-lg text-feduzzi-dark mb-1">Onze Dolci</h4>
+                                <h4 className="font-serif text-lg text-feduzzi-dark mb-1">{t('onze_dolci')}</h4>
                                 <p className="text-xs text-gray-600 italic">
-                                    Proef onze huisgemaakte biscotti en koekjes. Een perfecte afsluiting van uw maaltijd.
+                                    {t('dolci_tekst')}
                                 </p>
                             </div>
                         </div>
@@ -70,9 +68,9 @@ const OverOns = () => {
             </section>
 
             {/* Green Quote Section - Compact */}
-            <div className="bg-feduzzi-dark text-white py-16 px-4">
+            <div className="bg-feduzzi-olive text-white py-16 px-4 border-t border-white/10">
                 <div className="max-w-3xl mx-auto text-center">
-                    <h2 className="font-serif text-2xl md:text-4xl leading-tight italic text-feduzzi-cream">
+                    <h2 className="font-serif text-2xl md:text-4xl leading-tight italic text-white drop-shadow-md">
                         “In cucina si buttano le briglie della creatività”
                     </h2>
                 </div>
@@ -87,24 +85,21 @@ const OverOns = () => {
                     </div>
 
                     <div className="order-1 md:order-2 space-y-5">
-                        <h2 className="font-serif text-3xl md:text-4xl text-feduzzi-dark">Wat is Feduzzi?</h2>
+                        <h2 className="font-serif text-3xl md:text-4xl text-feduzzi-dark">{t('wat_is_feduzzi')}</h2>
                         <div className="prose prose-lg text-gray-700 font-sans text-base">
                             <p>
-                                Wij verkopen broodjes, pasta’s, salades, wijnen, koffie, diverse soorten balsamico en olijfolie, kazen en vleeswaren.
-                                Allemaal om <span className="font-bold text-feduzzi-olive">direct van te genieten</span> in onze winkel of thuis.
+                                {t('wat_is_feduzzi_text1')}
                             </p>
                             <p>
-                                Wij focussen ons het meest op afhaal. Van belegde broodjes voor de lunch tot een heerlijk diner voor thuis en borrelhapjes voor een feestje.
-                                Ook stellen wij graag een menu samen voor zakelijke lunches.
+                                {t('wat_is_feduzzi_text2')}
                             </p>
                         </div>
                         <a href="/menu" className="inline-block mt-4 text-feduzzi-red font-bold uppercase tracking-widest text-xs hover:underline cursor-pointer">
-                            Bekijk ons aanbod &rarr;
+                            {t('bekijk_aanbod')} &rarr;
                         </a>
                     </div>
                 </div>
             </div>    </div>
     );
 };
-
 export default OverOns;
