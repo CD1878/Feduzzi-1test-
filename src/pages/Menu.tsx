@@ -6,7 +6,8 @@ import ProductCard from '../components/ProductCard';
 const Menu = () => {
     const [activeTab, setActiveTab] = useState<'maaltijden' | 'broodjes' | 'traiteur'>('maaltijden');
 
-    const filteredProducts = PRODUCTS.filter(p => p.category === activeTab);
+    // Normalize category comparison (Data has 'Maaltijden', tab is 'maaltijden')
+    const filteredProducts = PRODUCTS.filter(p => p.category.toLowerCase() === activeTab.toLowerCase());
 
     return (
         <div className="bg-white min-h-screen">
@@ -35,8 +36,8 @@ const Menu = () => {
                             key={tab}
                             onClick={() => setActiveTab(tab as any)}
                             className={`px-8 py-3 rounded-full uppercase text-xs font-bold tracking-widest transition-all duration-300 transform hover:scale-105 ${activeTab === tab
-                                    ? 'bg-feduzzi-red text-white shadow-lg shadow-feduzzi-red/30'
-                                    : 'bg-gray-50 text-gray-500 hover:bg-feduzzi-olive hover:text-white'
+                                ? 'bg-feduzzi-red text-white shadow-lg shadow-feduzzi-red/30'
+                                : 'bg-gray-50 text-gray-500 hover:bg-feduzzi-olive hover:text-white'
                                 }`}
                         >
                             {tab}
