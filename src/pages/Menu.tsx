@@ -89,7 +89,7 @@ const Menu = () => {
 
             <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
                 {/* Product Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 animate-fadeIn">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 animate-fadeIn">
                     {filteredProducts.map((product) => (
                         <div key={product.id} className="transform transition-all duration-500 hover:-translate-y-2">
                             <ProductCard product={product} />

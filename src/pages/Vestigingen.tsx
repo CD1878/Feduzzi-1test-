@@ -131,7 +131,7 @@ const Vestigingen = () => {
             </div>
 
             {/* Contact Form Section - Reduced whitespace */}
-            <div className="bg-feduzzi-olive py-12 relative overflow-hidden">
+            <div className="bg-[#7F9F7B] py-12 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-bl-full"></div>
                 <div className="max-w-4xl mx-auto px-4 md:px-8 relative z-10">
                     <div className="text-center mb-12">

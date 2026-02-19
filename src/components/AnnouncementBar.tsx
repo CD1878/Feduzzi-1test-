@@ -9,7 +9,7 @@ const AnnouncementBar = () => {
     if (!isVisible) return null;
 
     return (
-        <div className="bg-feduzzi-olive text-white text-xs md:text-sm py-2 px-4 text-center font-sans tracking-wide relative z-50 shadow-md">
+        <div className="bg-[#7F9F7B] text-white text-xs md:text-sm py-2 px-4 text-center font-sans tracking-wide relative z-50 shadow-md">
             <p>{t('nieuwe_vestiging')} <strong>Feduzzi Laren</strong> - {t('nu_open')}</p>
             <button
                 onClick={() => setIsVisible(false)}

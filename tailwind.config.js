@@ -10,7 +10,7 @@ export default {
                 feduzzi: {
                     red: '#C41E3A', // Classic Italian Red
                     cream: '#FFFDD0', // Cream/Panna Cotta
-                    olive: '#7F9F7B', // New Olive Green
+                    olive: '#7F9F7B', // New Olive Green (Verified)
                     dark: '#1A1A1A', // Soft Black
                 }
             },

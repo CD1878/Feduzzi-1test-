@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { IMAGES } from '../constants/images';
 
 const WerkenBij = () => {
     const { t } = useLanguage();
@@ -34,7 +35,7 @@ const WerkenBij = () => {
 
                 <div className="max-w-5xl mx-auto px-4 md:px-8">
                     <div className="text-center mb-16 relative z-10">
-                        <span className="inline-block py-1 px-3 border border-feduzzi-olive text-feduzzi-olive rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+                        <span className="inline-block py-1 px-3 border border-[#7F9F7B] text-[#7F9F7B] rounded-full text-xs font-bold uppercase tracking-widest mb-6">
                             {t('join_family')}
                         </span>
                         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-feduzzi-dark mb-8 leading-tight max-w-4xl mx-auto italic">
@@ -78,14 +79,18 @@ const WerkenBij = () => {
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start mb-20">
                         {/* Visuals */}
                         <div className="col-span-1 md:col-span-12 lg:col-span-5 relative hidden lg:block">
-                            <div className="absolute -top-4 -left-4 w-full h-full border-2 border-feduzzi-olive rounded-xl z-0"></div>
-                            {/* Replaced image with placeholder since local image might not exist or path issue, using generic shelf for now or just text if preferred, but existing code had /images/team.jpg */}
-                            {/* Using a placeholder div or keep existing logic if image exists. I'll use a placeholder div with style similar to existing to ensure no broken image icon if file missing */}
-                            <div className="w-full h-[600px] bg-feduzzi-cream rounded-xl shadow-xl relative z-10 flex items-center justify-center overflow-hidden">
-                                <span className="text-feduzzi-olive font-serif italic text-2xl px-8 text-center">{t('quote_family')}</span>
+                            <div className="absolute -top-4 -left-4 w-full h-full border-2 border-[#7F9F7B] rounded-xl z-0"></div>
+
+                            <div className="w-full h-[600px] rounded-xl shadow-xl relative z-10 overflow-hidden group">
+                                <img
+                                    src={IMAGES.chefs}
+                                    alt="Feduzzi Team"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                             </div>
 
-                            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg z-20 max-w-xs">
+                            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg z-20 max-w-xs border border-gray-100">
                                 <p className="font-serif italic text-feduzzi-dark text-lg">
                                     {t('quote_familie')}
                                 </p>
@@ -95,7 +100,7 @@ const WerkenBij = () => {
                         {/* Form */}
                         <div className="col-span-1 md:col-span-12 lg:col-span-7">
                             <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
-                                <div className="bg-feduzzi-olive p-8 md:p-10 text-white">
+                                <div className="bg-[#7F9F7B] p-8 md:p-10 text-white">
                                     <h3 className="font-serif text-3xl mb-2">{t('solliciteer_contact_titel')}</h3>
                                     <p className="text-white/80">{t('solliciteer_contact_sub')}</p>
                                 </div>
