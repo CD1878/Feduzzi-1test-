@@ -36,11 +36,13 @@ const WerkenBij = () => {
                         <span className="inline-block py-1 px-3 border border-feduzzi-olive text-feduzzi-olive rounded-full text-xs font-bold uppercase tracking-widest mb-6">
                             Join the Family
                         </span>
-                        <h1 className="font-serif text-4xl md:text-6xl text-feduzzi-dark mb-8 leading-tight max-w-4xl mx-auto">
-                            Wil jij ook werken bij de leukste Italiaan van <span className="text-feduzzi-red italic">Amsterdam</span>?
+                        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-feduzzi-dark mb-8 leading-tight max-w-4xl mx-auto italic">
+                            “La vera cucina italiana è una forma d'arte. Un dono per i sensi”
                         </h1>
-                        <p className="font-sans text-gray-700 mb-8 leading-relaxed max-w-2xl mx-auto text-lg">
-                            Bekijk onze vacatures of stuur een open sollicitatie. We zijn altijd op zoek naar enthousiaste mensen!
+                        <p className="font-sans text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto text-lg">
+                            Wil jij ook werken bij de leukste Italiaan van Amsterdam en authentiek Italiaans leren koken?
+                            Vul dan het formulier hieronder in, hierna nemen we snel contact met je op om je sollicitatie verder te bespreken en mogelijk een vrijblijvende proefdag te plannen.
+                            Ook bereik je ons telefonisch. We kijken ernaar uit om je te leren kennen!
                         </p>
                     </div>
 
@@ -85,7 +87,7 @@ const WerkenBij = () => {
                             />
                             <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg z-20 max-w-xs">
                                 <p className="font-serif italic text-feduzzi-dark text-lg">
-                                    "Feduzzi voelt als familie. Hard werken, maar altijd met een glimlach."
+                                    “Feduzzi is als een familie en zo voelt het ook om hier te werken.”
                                 </p>
                             </div>
                         </div>
@@ -94,8 +96,8 @@ const WerkenBij = () => {
                         <div className="col-span-1 md:col-span-12 lg:col-span-7">
                             <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
                                 <div className="bg-feduzzi-dark p-8 md:p-10 text-white">
-                                    <h3 className="font-serif text-3xl mb-2">Open Sollicitatie</h3>
-                                    <p className="text-white/80">Staat jouw droombaan er niet tussen? Laat van je horen!</p>
+                                    <h3 className="font-serif text-3xl mb-2">Solliciteer of Neem Contact Op</h3>
+                                    <p className="text-white/80">Vul het formulier in voor een sollicitatie of algemene vragen.</p>
                                 </div>
 
                                 <form className="p-8 md:p-10 space-y-6">
@@ -122,26 +124,21 @@ const WerkenBij = () => {
                                     </div>
 
                                     <div>
-                                        <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Geboortedatum *</label>
-                                        <input type="date" className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-feduzzi-olive transition-colors" required />
-                                    </div>
-
-                                    <div>
-                                        <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Waar wil je werken?</label>
+                                        <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Waar gaat het over?</label>
                                         <select className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-feduzzi-olive transition-colors">
-                                            <option value="Amsterdam">Amsterdam (Scheldestraat)</option>
-                                            <option value="Laren">Laren</option>
-                                            <option value="Geen voorkeur">Geen voorkeur</option>
+                                            <option value="Sollicitatie">Ik wil solliciteren</option>
+                                            <option value="Vraag">Ik heb een algemene vraag</option>
+                                            <option value="Overig">Overig</option>
                                         </select>
                                     </div>
 
                                     <div>
-                                        <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Motivatie *</label>
-                                        <textarea rows={4} className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-feduzzi-olive transition-colors" placeholder="Vertel ons waarom je bij ons past..." required></textarea>
+                                        <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Bericht / Motivatie *</label>
+                                        <textarea rows={4} className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-feduzzi-olive transition-colors" placeholder="Vertel ons meer..." required></textarea>
                                     </div>
 
                                     <button type="submit" className="w-full bg-feduzzi-red text-white py-4 px-8 uppercase font-bold tracking-widest hover:bg-feduzzi-dark transition-colors rounded-lg shadow-lg transform active:scale-95">
-                                        Verstuur Sollicitatie
+                                        Verstuur Bericht
                                     </button>
                                 </form>
                             </div>

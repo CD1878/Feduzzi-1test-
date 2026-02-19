@@ -20,7 +20,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
     };
 
     return (
-        <div className="flex flex-col border border-gray-100 rounded-lg overflow-hidden group hover:shadow-lg transition-shadow duration-300 bg-white h-full relative">
+        <div className="flex flex-col border border-gray-100 rounded-lg overflow-hidden group hover:shadow-2xl transition-all duration-500 bg-white h-full relative hover:-translate-y-1">
             <div className="h-48 overflow-hidden relative">
                 <img
                     src={product.image}

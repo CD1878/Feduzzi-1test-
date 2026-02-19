@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 import AnnouncementBar from './AnnouncementBar';
 import { LOGO_URL, IMAGES } from '../constants/images';
 import { useCart } from '../context/CartContext';
+import { useLanguage } from '../context/LanguageContext';
 import CartDrawer from './CartDrawer';
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { cartCount, setIsCartOpen } = useCart();
+    const { t, language, setLanguage } = useLanguage();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -39,34 +41,57 @@ const Header = () => {
 
                     {/* Desktop Nav */}
                     <nav className="hidden lg:flex items-center space-x-8 font-sans uppercase tracking-widest text-xs font-semibold">
-                        {['Menu', 'Sfeer', 'Over ons', 'Werken bij', 'Vestigingen'].map((item) => (
-                            <Link key={item} to={`/${item.toLowerCase().replace(' ', '-')}`} className="hover:opacity-70 transition-opacity">
-                                {item}
+                        {[
+                            { key: 'menu', path: '/menu' },
+                            { key: 'sfeer', path: '/sfeer' },
+                            { key: 'over_ons', path: '/over-ons' },
+                            { key: 'werken_bij', path: '/werken-bij' },
+                            { key: 'vestigingen', path: '/vestigingen' }
+                        ].map((item) => (
+                            <Link key={item.key} to={item.path} className="hover-underline-animation hover:text-feduzzi-olive transition-colors duration-300">
+                                {t(item.key)}
                             </Link>
                         ))}
                     </nav>
 
                     {/* Desktop Actions */}
                     <div className="hidden lg:flex items-center space-x-6">
+                        {/* Language Switcher */}
+                        <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-widest">
+                            <button
+                                onClick={() => setLanguage('nl')}
+                                className={`transition-colors ${language === 'nl' ? 'text-feduzzi-olive' : 'text-white/70 hover:text-white'}`}
+                            >
+                                NL
+                            </button>
+                            <span className="text-white/30">|</span>
+                            <button
+                                onClick={() => setLanguage('en')}
+                                className={`transition-colors ${language === 'en' ? 'text-feduzzi-olive' : 'text-white/70 hover:text-white'}`}
+                            >
+                                EN
+                            </button>
+                        </div>
+
                         <div className="flex space-x-4">
-                            <a href="#" className="hover:opacity-70"><Facebook size={20} /></a>
-                            <a href="#" className="hover:opacity-70"><Instagram size={20} /></a>
+                            <a href="#" className="hover:text-feduzzi-olive transition-colors duration-300 transform hover:scale-110"><Facebook size={20} /></a>
+                            <a href="#" className="hover:text-feduzzi-olive transition-colors duration-300 transform hover:scale-110"><Instagram size={20} /></a>
                         </div>
 
                         <button
                             onClick={() => setIsCartOpen(true)}
-                            className={`relative p-2 hover:opacity-70 transition-opacity ${isScrolled ? 'text-black' : 'text-white'}`}
+                            className={`relative p-2 hover:text-feduzzi-olive transition-colors duration-300 transform hover:scale-110 ${isScrolled ? 'text-black' : 'text-white'}`}
                         >
                             <ShoppingCart size={24} />
                             {cartCount > 0 && (
-                                <span className="absolute -top-1 -right-1 bg-feduzzi-red text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold">
+                                <span className="absolute -top-1 -right-1 bg-feduzzi-olive text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold animate-bounce">
                                     {cartCount}
                                 </span>
                             )}
                         </button>
 
-                        <Link to="/menu" className={`border px-6 py-3 uppercase text-xs font-bold tracking-widest transition-colors ${isScrolled ? 'border-black hover:bg-black hover:text-white' : 'border-white hover:bg-white hover:text-black'}`}>
-                            Bestel broodjes
+                        <Link to="/menu" className={`border px-6 py-3 uppercase text-xs font-bold tracking-widest transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md ${isScrolled ? 'border-black hover:bg-feduzzi-olive hover:border-feduzzi-olive hover:text-white' : 'border-white hover:bg-white hover:text-feduzzi-dark'}`}>
+                            {t('bestel_broodjes')}
                         </Link>
                     </div>
 

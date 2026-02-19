@@ -7,12 +7,12 @@ export default {
     theme: {
         extend: {
             colors: {
-                'feduzzi-red': '#C41E3A', // Deep, premium red
-                'feduzzi-red-hover': '#A01830',
-                'feduzzi-cream': '#F9F7F2', // Soft background cream
-                'feduzzi-dark': '#1A1A1A', // Soft black for text
-                'feduzzi-olive': '#738F68', // Muted Italian Olive Green (from screenshot)
-                'feduzzi-gold': '#D4AF37', // Accent gold
+                feduzzi: {
+                    red: '#C41E3A', // Classic Italian Red
+                    cream: '#FFFDD0', // Cream/Panna Cotta
+                    olive: '#799a74', // New Olive Green
+                    dark: '#1A1A1A', // Soft Black
+                }
             },
             fontFamily: {
                 serif: ['Playfair Display', 'serif'], // Elegant serif for headings
