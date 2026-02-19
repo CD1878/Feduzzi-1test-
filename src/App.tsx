@@ -16,9 +16,12 @@ import AdminDashboard from './pages/AdminDashboard';
 // Placeholder for Catering page
 const Catering = () => <div className="pt-32 text-center text-2xl font-serif">Catering Page (Coming Soon)</div>;
 
+import ScrollToTop from './components/ScrollToTop';
+
 const App = () => {
     return (
         <Router>
+            <ScrollToTop />
             <CartProvider>
                 <div className="min-h-screen bg-white">
                     <Routes>

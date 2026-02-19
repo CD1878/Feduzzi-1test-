@@ -11,6 +11,8 @@ export default {
                 'feduzzi-red-hover': '#A01830',
                 'feduzzi-cream': '#F9F7F2', // Soft background cream
                 'feduzzi-dark': '#1A1A1A', // Soft black for text
+                'feduzzi-olive': '#738F68', // Muted Italian Olive Green (from screenshot)
+                'feduzzi-gold': '#D4AF37', // Accent gold
             },
             fontFamily: {
                 serif: ['Playfair Display', 'serif'], // Elegant serif for headings

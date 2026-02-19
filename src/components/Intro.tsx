@@ -24,34 +24,39 @@ const Intro = () => {
                 </div>
 
                 {/* Photo Grid - Custom Masonry Layout Simulation */}
-                <div className="grid grid-cols-2 md:grid-cols-6 lg:grid-cols-12 gap-4 md:gap-6 auto-rows-[200px] mb-16">
-
-                    {/* Row 1 */}
-                    <div className="col-span-2 md:col-span-2 lg:col-span-3 row-span-1 md:row-span-2 overflow-hidden rounded-lg">
-                        <img src={IMAGES.shelf} alt="Shelves" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                {/* Photo Collage - Organic Scattering */}
+                <div className="relative h-[600px] md:h-[800px] w-full mb-20 mt-12 hidden md:block">
+                    {/* Left Cluster */}
+                    <div className="absolute top-0 left-0 w-1/4 h-64 z-10 hover:z-20 transition-all duration-500 hover:scale-105 -rotate-3">
+                        <img src={IMAGES.shelf} alt="Shelves" className="w-full h-full object-cover rounded-lg shadow-xl" />
+                    </div>
+                    <div className="absolute top-40 left-[15%] w-1/3 h-80 z-20 hover:z-30 transition-all duration-500 hover:scale-105 rotate-2">
+                        <img src={IMAGES.meatballs} alt="Meatballs" className="w-full h-full object-cover rounded-lg shadow-xl" />
                     </div>
 
-                    <div className="col-span-2 md:col-span-4 lg:col-span-5 row-span-1 md:row-span-2 overflow-hidden rounded-lg">
-                        <img src={IMAGES.meatballs} alt="Meatballs" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                    {/* Right Top Cluster */}
+                    <div className="absolute top-10 right-[5%] w-1/3 h-72 z-10 hover:z-20 transition-all duration-500 hover:scale-105 rotate-3">
+                        <img src={IMAGES.chefs} alt="Chefs" className="w-full h-full object-cover rounded-lg shadow-xl" />
                     </div>
 
-                    <div className="col-span-2 md:col-span-3 lg:col-span-4 row-span-1 md:row-span-2 overflow-hidden rounded-lg">
-                        <img src={IMAGES.chefs} alt="Chefs" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                    {/* Center/Bottom Cluster */}
+                    <div className="absolute bottom-20 left-[5%] w-1/3 h-64 z-10 hover:z-20 transition-all duration-500 hover:scale-105 rotate-1">
+                        <img src={IMAGES.bag} alt="Bag" className="w-full h-full object-cover rounded-lg shadow-xl" />
                     </div>
-
-                    {/* Row 2 (offset layout) */}
-                    <div className="col-span-2 md:col-span-3 lg:col-span-4 row-span-1 md:row-span-2 overflow-hidden rounded-lg lg:-mt-12">
-                        <img src={IMAGES.sandwich} alt="Sandwich" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute bottom-40 right-[25%] w-1/4 h-56 z-0 hover:z-20 transition-all duration-500 hover:scale-105 -rotate-6">
+                        <img src={IMAGES.sandwich} alt="Sandwich" className="w-full h-full object-cover rounded-lg shadow-xl" />
                     </div>
-
-                    <div className="col-span-2 md:col-span-3 lg:col-span-5 row-span-1 md:row-span-2 overflow-hidden rounded-lg">
-                        <img src={IMAGES.pasta} alt="Pasta" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute bottom-0 right-[5%] w-1/3 h-80 z-20 hover:z-30 transition-all duration-500 hover:scale-105 -rotate-2">
+                        <img src={IMAGES.pasta} alt="Pasta" className="w-full h-full object-cover rounded-lg shadow-xl" />
                     </div>
+                </div>
 
-                    <div className="col-span-2 md:col-span-3 lg:col-span-3 row-span-1 md:row-span-2 overflow-hidden rounded-lg lg:-mt-24">
-                        <img src={IMAGES.bag} alt="Bag" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-                    </div>
-
+                {/* Mobile Grid (Simplified for smaller screens) */}
+                <div className="grid grid-cols-2 gap-4 md:hidden mb-12">
+                    <img src={IMAGES.shelf} alt="Shelves" className="w-full h-40 object-cover rounded-lg shadow-md -rotate-1" />
+                    <img src={IMAGES.meatballs} alt="Meatballs" className="w-full h-40 object-cover rounded-lg shadow-md rotate-2 translation-y-4" />
+                    <img src={IMAGES.chefs} alt="Chefs" className="w-full h-40 object-cover rounded-lg shadow-md rotate-1" />
+                    <img src={IMAGES.pasta} alt="Pasta" className="w-full h-40 object-cover rounded-lg shadow-md -rotate-2" />
                 </div>
 
                 <div className="text-center">
