@@ -5,6 +5,8 @@ export interface Product {
     price: number;
     category: string;
     image: string;
+    weight?: string;
+    serves?: number;
 }
 
 export const PRODUCTS: Product[] = [
@@ -187,7 +189,9 @@ export const PRODUCTS: Product[] = [
         description: 'Klassieke lasagne met rundergehakt, bechamelsaus en Parmezaanse kaas. (Klaar om op te warmen)',
         price: 14.50,
         category: 'Maaltijden',
-        image: 'https://images.unsplash.com/photo-1574868235805-c8124f76783c?auto=format&fit=crop&q=80&w=800'
+        image: 'https://images.unsplash.com/photo-1574868235805-c8124f76783c?auto=format&fit=crop&q=80&w=800',
+        weight: '450g',
+        serves: 1
     },
     {
         id: 'melanzane',
@@ -195,7 +199,9 @@ export const PRODUCTS: Product[] = [
         description: 'Vegetarische ovenschotel met aubergine, tomaat, mozzarella en basilicum.',
         price: 13.50,
         category: 'Maaltijden',
-        image: 'https://images.unsplash.com/photo-1598379374495-a22830f3a61f?auto=format&fit=crop&q=80&w=800'
+        image: 'https://images.unsplash.com/photo-1598379374495-a22830f3a61f?auto=format&fit=crop&q=80&w=800',
+        weight: '400g',
+        serves: 1
     },
     {
         id: 'carbonara',
@@ -203,7 +209,9 @@ export const PRODUCTS: Product[] = [
         description: 'Authentieke spaghetti met guanciale, pecorino eieren en zwarte peper.',
         price: 12.50,
         category: 'Maaltijden',
-        image: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&q=80&w=800'
+        image: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&q=80&w=800',
+        weight: '400g',
+        serves: 1
     },
     {
         id: 'cannelloni',
@@ -211,7 +219,9 @@ export const PRODUCTS: Product[] = [
         description: 'Gevulde pastarollen met ricotta en spinazie in een zachte tomatensaus.',
         price: 13.50,
         category: 'Maaltijden',
-        image: 'https://images.unsplash.com/photo-1608219992524-aa2c604b3905?auto=format&fit=crop&q=80&w=800'
+        image: 'https://images.unsplash.com/photo-1608219992524-aa2c604b3905?auto=format&fit=crop&q=80&w=800',
+        weight: '400g',
+        serves: 1
     },
     {
         id: 'tiramisu',
@@ -219,7 +229,9 @@ export const PRODUCTS: Product[] = [
         description: 'Huisgemaakte tiramisu volgens traditioneel recept.',
         price: 6.50,
         category: 'Maaltijden',
-        image: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&q=80&w=800'
+        image: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&q=80&w=800',
+        weight: '150g',
+        serves: 1
     },
     {
         id: 'pannacotta',
@@ -227,7 +239,9 @@ export const PRODUCTS: Product[] = [
         description: 'Zijdezachte roompudding met een coulis van rood fruit.',
         price: 6.50,
         category: 'Maaltijden',
-        image: 'https://images.unsplash.com/photo-1488477181946-6428a029177b?auto=format&fit=crop&q=80&w=800'
+        image: 'https://images.unsplash.com/photo-1488477181946-6428a029177b?auto=format&fit=crop&q=80&w=800',
+        weight: '150g',
+        serves: 1
     },
 
     // Traiteur
@@ -237,7 +251,9 @@ export const PRODUCTS: Product[] = [
         description: 'Luxe schaal met diverse Italiaanse vleeswaren, kazen, olijven en gegrilde groenten. (Prijs per persoon)',
         price: 18.50,
         category: 'Traiteur',
-        image: 'https://images.unsplash.com/photo-1541095441899-5dcd3bef00a9?auto=format&fit=crop&q=80&w=800'
+        image: 'https://images.unsplash.com/photo-1541095441899-5dcd3bef00a9?auto=format&fit=crop&q=80&w=800',
+        weight: '250g',
+        serves: 1
     },
     {
         id: 'vitello-schaal',
@@ -245,7 +261,9 @@ export const PRODUCTS: Product[] = [
         description: 'Grote schaal met fijngesneden kalfsfricandeau en tonijnmayonaise (voor 4-6 personen).',
         price: 45.00,
         category: 'Traiteur',
-        image: 'https://images.unsplash.com/photo-1549442037-ccf3c88081a2?auto=format&fit=crop&q=80&w=800'
+        image: 'https://images.unsplash.com/photo-1549442037-ccf3c88081a2?auto=format&fit=crop&q=80&w=800',
+        weight: '1000g',
+        serves: 5
     },
     {
         id: 'carpaccio',
@@ -253,7 +271,9 @@ export const PRODUCTS: Product[] = [
         description: 'Schaal met ossenhaas carpaccio, pijnboompitten, parmezaan en truffelmayo (voor 4-6 personen).',
         price: 45.00,
         category: 'Traiteur',
-        image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&q=80&w=800'
+        image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&q=80&w=800',
+        weight: '800g',
+        serves: 5
     },
     {
         id: 'kaasplank',
@@ -261,7 +281,9 @@ export const PRODUCTS: Product[] = [
         description: 'Selectie van 5 bijzondere Italiaanse kazen met vijgenbrood en stroop.',
         price: 22.50,
         category: 'Traiteur',
-        image: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&q=80&w=800'
+        image: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&q=80&w=800',
+        weight: '400g',
+        serves: 2
     },
     {
         id: 'olijven',
@@ -269,7 +291,9 @@ export const PRODUCTS: Product[] = [
         description: 'Bakje met gemarineerde olijven en verse tapenades.',
         price: 6.50,
         category: 'Traiteur',
-        image: 'https://images.unsplash.com/photo-1596765103603-c91834925565?auto=format&fit=crop&q=80&w=800'
+        image: 'https://images.unsplash.com/photo-1596765103603-c91834925565?auto=format&fit=crop&q=80&w=800',
+        weight: '200g',
+        serves: 2
     }
 ];
 

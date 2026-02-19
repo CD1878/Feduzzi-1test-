@@ -12,7 +12,7 @@ const Menu = () => {
     return (
         <div className="bg-white min-h-screen">
             {/* Header Section */}
-            <div className="pt-8 pb-20 bg-feduzzi-cream relative overflow-hidden">
+            <div className="pt-24 pb-32 bg-feduzzi-cream relative overflow-hidden">
                 <div className="absolute -top-10 -right-10 w-64 h-64 bg-feduzzi-red/5 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-feduzzi-olive to-feduzzi-red"></div>
 
@@ -27,7 +27,48 @@ const Menu = () => {
                     </p>
                 </div>
             </div>
+            {/* How it Works - Stepper */}
+            <div className="max-w-7xl mx-auto px-4 transform -translate-y-8 relative z-20">
+                <div className="bg-white rounded-xl shadow-xl p-8 md:p-10 border border-gray-100">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                        {/* Connecting Line (Desktop) */}
+                        <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gray-100 -z-0"></div>
 
+                        {/* Step 1 */}
+                        <div className="text-center relative z-10">
+                            <div className="w-24 h-24 mx-auto bg-feduzzi-cream rounded-full flex items-center justify-center mb-6 shadow-sm border-4 border-white">
+                                <span className="font-serif text-4xl text-feduzzi-olive transition-transform hover:scale-110 duration-300">1</span>
+                            </div>
+                            <h3 className="font-bold text-feduzzi-dark uppercase tracking-widest text-sm mb-3">Kies & Selecteer</h3>
+                            <p className="text-gray-500 text-sm leading-relaxed px-4">
+                                Bekijk onze gerechten en kies het aantal personen. Alles wordt vers voor u bereid.
+                            </p>
+                        </div>
+
+                        {/* Step 2 */}
+                        <div className="text-center relative z-10">
+                            <div className="w-24 h-24 mx-auto bg-feduzzi-cream rounded-full flex items-center justify-center mb-6 shadow-sm border-4 border-white">
+                                <span className="font-serif text-4xl text-feduzzi-olive transition-transform hover:scale-110 duration-300">2</span>
+                            </div>
+                            <h3 className="font-bold text-feduzzi-dark uppercase tracking-widest text-sm mb-3">Bestel & Betaal</h3>
+                            <p className="text-gray-500 text-sm leading-relaxed px-4">
+                                Plaats uw bestelling eenvoudig online. U ontvangt direct een bevestiging.
+                            </p>
+                        </div>
+
+                        {/* Step 3 */}
+                        <div className="text-center relative z-10">
+                            <div className="w-24 h-24 mx-auto bg-feduzzi-cream rounded-full flex items-center justify-center mb-6 shadow-sm border-4 border-white">
+                                <span className="font-serif text-4xl text-feduzzi-olive transition-transform hover:scale-110 duration-300">3</span>
+                            </div>
+                            <h3 className="font-bold text-feduzzi-dark uppercase tracking-widest text-sm mb-3">Ophalen</h3>
+                            <p className="text-gray-500 text-sm leading-relaxed px-4">
+                                Haal uw bestelling op de gekozen datum. <span className="text-feduzzi-red font-bold">Bestel minimaal 24 uur van tevoren.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {/* Tab Navigation - Playful Styling */}
             <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm py-4">
                 <div className="flex justify-center flex-wrap gap-4 px-4 overflow-x-auto">
