@@ -7,11 +7,11 @@ const AnnouncementBar = () => {
     if (!isVisible) return null;
 
     return (
-        <div className="bg-white text-black text-xs md:text-sm py-2 px-4 text-center font-sans tracking-wide relative z-50">
+        <div className="bg-feduzzi-olive text-white text-xs md:text-sm py-2 px-4 text-center font-sans tracking-wide relative z-50 shadow-md">
             <p>nieuwe vestiging <strong>Feduzzi Laren</strong> - nu open!</p>
             <button
                 onClick={() => setIsVisible(false)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-black"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors"
                 aria-label="Sluiten"
             >
                 <X size={16} />
