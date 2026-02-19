@@ -126,6 +126,61 @@ const Vestigingen = () => {
                     </div>
                 ))}
             </div>
+
+            {/* Contact Form Section */}
+            <div className="bg-feduzzi-olive py-20 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-bl-full"></div>
+                <div className="max-w-4xl mx-auto px-4 md:px-8 relative z-10">
+                    <div className="text-center mb-12">
+                        <span className="text-white/80 font-bold uppercase tracking-widest text-xs mb-4 block">Heeft u een vraag?</span>
+                        <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Neem Contact Op</h2>
+                        <p className="text-white/90 text-lg max-w-2xl mx-auto">
+                            Wilt u meer weten over onze catering, producten of heeft u een andere vraag?
+                            Vul het formulier in en wij nemen zo snel mogelijk contact met u op.
+                        </p>
+                    </div>
+
+                    <form className="bg-white rounded-2xl shadow-xl p-8 md:p-12 space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Naam *</label>
+                                <input type="text" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-feduzzi-olive focus:bg-white transition-all outline-none rounded-lg" placeholder="Uw naam" required />
+                            </div>
+                            <div>
+                                <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Email *</label>
+                                <input type="email" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-feduzzi-olive focus:bg-white transition-all outline-none rounded-lg" placeholder="uw@email.nl" required />
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Telefoonnummer</label>
+                                <input type="tel" className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-feduzzi-olive focus:bg-white transition-all outline-none rounded-lg" placeholder="06 12345678" />
+                            </div>
+                            <div>
+                                <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Onderwerp</label>
+                                <select className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-feduzzi-olive focus:bg-white transition-all outline-none rounded-lg">
+                                    <option>Algemene vraag</option>
+                                    <option>Catering</option>
+                                    <option>Sollicitatie</option>
+                                    <option>Overige</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Bericht *</label>
+                            <textarea rows={5} className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-feduzzi-olive focus:bg-white transition-all outline-none rounded-lg" placeholder="Waar kunnen we u mee helpen?" required></textarea>
+                        </div>
+
+                        <div className="text-center pt-4">
+                            <button type="submit" className="bg-feduzzi-red text-white py-4 px-12 uppercase font-bold tracking-widest hover:bg-feduzzi-dark transition-colors rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                Verstuur Bericht
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     );
 };
