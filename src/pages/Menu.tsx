@@ -4,7 +4,7 @@ import { PRODUCTS } from '../data/products';
 import ProductCard from '../components/ProductCard';
 
 const Menu = () => {
-    const [activeTab, setActiveTab] = useState<'maaltijden' | 'broodjes' | 'traiteur'>('maaltijden');
+    const [activeTab, setActiveTab] = useState<'maaltijden' | 'broodjes' | 'traiteur'>('broodjes');
 
     // Normalize category comparison (Data has 'Maaltijden', tab is 'maaltijden')
     const filteredProducts = PRODUCTS.filter(p => p.category.toLowerCase() === activeTab.toLowerCase());
@@ -12,7 +12,7 @@ const Menu = () => {
     return (
         <div className="bg-white min-h-screen">
             {/* Header Section */}
-            <div className="pt-32 pb-20 bg-feduzzi-cream relative overflow-hidden">
+            <div className="pt-8 pb-20 bg-feduzzi-cream relative overflow-hidden">
                 <div className="absolute -top-10 -right-10 w-64 h-64 bg-feduzzi-red/5 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-feduzzi-olive to-feduzzi-red"></div>
 
@@ -31,7 +31,7 @@ const Menu = () => {
             {/* Tab Navigation - Playful Styling */}
             <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm py-4">
                 <div className="flex justify-center flex-wrap gap-4 px-4 overflow-x-auto">
-                    {['maaltijden', 'broodjes', 'traiteur'].map((tab) => (
+                    {['broodjes', 'maaltijden', 'traiteur'].map((tab) => (
                         <button
                             key={tab}
                             onClick={() => setActiveTab(tab as any)}

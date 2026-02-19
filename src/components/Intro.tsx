@@ -24,39 +24,31 @@ const Intro = () => {
                 </div>
 
                 {/* Photo Grid - Custom Masonry Layout Simulation */}
-                {/* Photo Collage - Organic Scattering */}
-                <div className="relative h-[600px] md:h-[800px] w-full mb-20 mt-12 hidden md:block">
-                    {/* Left Cluster */}
-                    <div className="absolute top-0 left-0 w-1/4 h-64 z-10 hover:z-20 transition-all duration-500 hover:scale-105 -rotate-3">
-                        <img src={IMAGES.shelf} alt="Shelves" className="w-full h-full object-cover rounded-lg shadow-xl" />
+                {/* Photo Collage - Organic Scattering (Tightened Cluster) */}
+                <div className="relative h-[500px] md:h-[700px] w-full mb-20 mt-8 hidden md:block">
+                    <div className="absolute top-[10%] left-[20%] w-64 h-64 z-10 hover:z-20 transition-all duration-500 hover:scale-105 -rotate-6 shadow-2xl">
+                        <img src={IMAGES.shelf} alt="Shelves" className="w-full h-full object-cover rounded-lg border-4 border-white" />
                     </div>
-                    <div className="absolute top-40 left-[15%] w-1/3 h-80 z-20 hover:z-30 transition-all duration-500 hover:scale-105 rotate-2">
-                        <img src={IMAGES.meatballs} alt="Meatballs" className="w-full h-full object-cover rounded-lg shadow-xl" />
+                    <div className="absolute top-[5%] left-[40%] w-72 h-80 z-20 hover:z-30 transition-all duration-500 hover:scale-105 rotate-3 shadow-2xl">
+                        <img src={IMAGES.meatballs} alt="Meatballs" className="w-full h-full object-cover rounded-lg border-4 border-white" />
                     </div>
-
-                    {/* Right Top Cluster */}
-                    <div className="absolute top-10 right-[5%] w-1/3 h-72 z-10 hover:z-20 transition-all duration-500 hover:scale-105 rotate-3">
-                        <img src={IMAGES.chefs} alt="Chefs" className="w-full h-full object-cover rounded-lg shadow-xl" />
+                    <div className="absolute top-[15%] right-[20%] w-64 h-64 z-10 hover:z-20 transition-all duration-500 hover:scale-105 rotate-12 shadow-2xl">
+                        <img src={IMAGES.chefs} alt="Chefs" className="w-full h-full object-cover rounded-lg border-4 border-white" />
                     </div>
-
-                    {/* Center/Bottom Cluster */}
-                    <div className="absolute bottom-20 left-[5%] w-1/3 h-64 z-10 hover:z-20 transition-all duration-500 hover:scale-105 rotate-1">
-                        <img src={IMAGES.bag} alt="Bag" className="w-full h-full object-cover rounded-lg shadow-xl" />
+                    <div className="absolute bottom-[20%] left-[25%] w-72 h-64 z-30 hover:z-40 transition-all duration-500 hover:scale-105 -rotate-3 shadow-2xl">
+                        <img src={IMAGES.bag} alt="Bag" className="w-full h-full object-cover rounded-lg border-4 border-white" />
                     </div>
-                    <div className="absolute bottom-40 right-[25%] w-1/4 h-56 z-0 hover:z-20 transition-all duration-500 hover:scale-105 -rotate-6">
-                        <img src={IMAGES.sandwich} alt="Sandwich" className="w-full h-full object-cover rounded-lg shadow-xl" />
-                    </div>
-                    <div className="absolute bottom-0 right-[5%] w-1/3 h-80 z-20 hover:z-30 transition-all duration-500 hover:scale-105 -rotate-2">
-                        <img src={IMAGES.pasta} alt="Pasta" className="w-full h-full object-cover rounded-lg shadow-xl" />
+                    <div className="absolute bottom-[10%] right-[30%] w-60 h-60 z-20 hover:z-30 transition-all duration-500 hover:scale-105 rotate-6 shadow-2xl">
+                        <img src={IMAGES.sandwich} alt="Sandwich" className="w-full h-full object-cover rounded-lg border-4 border-white" />
                     </div>
                 </div>
 
-                {/* Mobile Grid (Simplified for smaller screens) */}
-                <div className="grid grid-cols-2 gap-4 md:hidden mb-12">
-                    <img src={IMAGES.shelf} alt="Shelves" className="w-full h-40 object-cover rounded-lg shadow-md -rotate-1" />
-                    <img src={IMAGES.meatballs} alt="Meatballs" className="w-full h-40 object-cover rounded-lg shadow-md rotate-2 translation-y-4" />
-                    <img src={IMAGES.chefs} alt="Chefs" className="w-full h-40 object-cover rounded-lg shadow-md rotate-1" />
-                    <img src={IMAGES.pasta} alt="Pasta" className="w-full h-40 object-cover rounded-lg shadow-md -rotate-2" />
+                {/* Mobile Grid (Tight & Aligned) */}
+                <div className="grid grid-cols-2 gap-3 md:hidden mb-12 px-4">
+                    <img src={IMAGES.shelf} alt="Shelves" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={IMAGES.meatballs} alt="Meatballs" className="w-full h-40 object-cover rounded-lg shadow-md translate-y-4" />
+                    <img src={IMAGES.chefs} alt="Chefs" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={IMAGES.pasta} alt="Pasta" className="w-full h-40 object-cover rounded-lg shadow-md translate-y-4" />
                 </div>
 
                 <div className="text-center">

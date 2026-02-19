@@ -63,7 +63,7 @@ const Vestigingen = () => {
                                     loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
                                     title={`Kaart van ${loc.city}`}
-                                    className="grayscale group-hover:grayscale-0 transition-all duration-700"
+                                    className="opacity-90 hover:opacity-100 transition-opacity duration-300"
                                 ></iframe>
                             </div>
                         </div>
