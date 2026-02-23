@@ -83,8 +83,8 @@ const WerkenBij = () => {
 
                             <div className="w-full h-[600px] rounded-xl shadow-xl relative z-10 overflow-hidden group">
                                 <img
-                                    src={IMAGES.chefs}
-                                    alt="Feduzzi Team"
+                                    src={IMAGES.team}
+                                    alt="Feduzzi Keuken"
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

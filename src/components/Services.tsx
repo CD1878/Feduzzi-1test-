@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { IMAGES } from '../constants/images';
+import { useLanguage } from '../context/LanguageContext';
 
 const ServiceCard = ({ image, title, description, buttonText, link }: { image: string, title: string, description: string, buttonText: string, link: string }) => (
     <div className="flex flex-col">
@@ -19,33 +20,35 @@ const ServiceCard = ({ image, title, description, buttonText, link }: { image: s
 );
 
 const Services = () => {
+    const { t } = useLanguage();
+
     return (
         <section className="py-20 px-4 md:px-8 bg-feduzzi-cream">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-center font-serif text-3xl md:text-5xl text-gray-400 font-light mb-16">
-                    Italiaanse Delicatessen
+                    {t('italiaanse_delicatessen')}
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <ServiceCard
                         image={IMAGES.serviceMaaltijden}
-                        title="Maaltijden"
-                        description="Heerlijke maaltijden van (vega)lasagne's tot authentieke pasta's en verfijnde desserts. Bekijk ons uitgebreide menu via de button hieronder"
-                        buttonText="Bekijk het maaltijden menu"
+                        title={t('service_maaltijden_titel')}
+                        description={t('service_maaltijden_desc')}
+                        buttonText={t('bekijk_maaltijden')}
                         link="/menu"
                     />
                     <ServiceCard
                         image={IMAGES.serviceBroodjes}
-                        title="Broodjes"
-                        description="Royaal belegde Italiaanse broodjes om van te genieten tijdens de lunchpauze. Bestel jouw favoriet via de knop hieronder"
-                        buttonText="Bekijk broodjes"
+                        title={t('service_broodjes_titel')}
+                        description={t('service_broodjes_desc')}
+                        buttonText={t('bekijk_broodjes')}
                         link="/menu"
                     />
                     <ServiceCard
                         image={IMAGES.serviceCatering}
-                        title="Traiteur"
-                        description="Verse bereide maaltijden voor bijzondere (zakelijke) gelegenheden die we aan de deur komen brengen of die je gemakkelijk ophaalt bij ons. Bekijk ons uitgebreide overzicht"
-                        buttonText="Bekijk het catering menu"
+                        title={t('service_traiteur_titel')}
+                        description={t('service_traiteur_desc')}
+                        buttonText={t('bekijk_catering')}
                         link="/catering"
                     />
                 </div>

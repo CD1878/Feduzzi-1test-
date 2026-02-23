@@ -46,6 +46,7 @@ const Header = () => {
                             { key: 'sfeer', path: '/sfeer' },
                             { key: 'over_ons', path: '/over-ons' },
                             { key: 'werken_bij', path: '/werken-bij' },
+                            { key: 'catering', path: '/catering' },
                             { key: 'vestigingen', path: '/vestigingen' }
                         ].map((item) => (
                             <Link key={item.key} to={item.path} className="hover-underline-animation hover:text-feduzzi-olive transition-colors duration-300">
@@ -121,14 +122,21 @@ const Header = () => {
                 {mobileMenuOpen && (
                     <div className="fixed inset-0 bg-black text-white z-40 flex flex-col pt-32 px-8">
                         <nav className="flex flex-col space-y-6 text-xl font-serif">
-                            {['Menu', 'Sfeer', 'Over ons', 'Werken bij', 'Vestigingen'].map((item) => (
+                            {[
+                                { key: 'menu', path: '/menu' },
+                                { key: 'sfeer', path: '/sfeer' },
+                                { key: 'over_ons', path: '/over-ons' },
+                                { key: 'werken_bij', path: '/werken-bij' },
+                                { key: 'catering', path: '/catering' },
+                                { key: 'vestigingen', path: '/vestigingen' }
+                            ].map((item) => (
                                 <Link
-                                    key={item}
-                                    to={`/${item.toLowerCase().replace(' ', '-')}`}
+                                    key={item.key}
+                                    to={item.path}
                                     className="hover:text-feduzzi-red transition-colors"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    {item}
+                                    {t(item.key)}
                                 </Link>
                             ))}
                         </nav>
@@ -137,7 +145,7 @@ const Header = () => {
                             <Instagram size={24} />
                         </div>
                         <Link to="/menu" className="mt-8 bg-feduzzi-red text-white text-center py-4 uppercase tracking-widest text-sm font-bold" onClick={() => setMobileMenuOpen(false)}>
-                            Bestel broodjes
+                            {t('bestel_broodjes')}
                         </Link>
                     </div>
                 )}

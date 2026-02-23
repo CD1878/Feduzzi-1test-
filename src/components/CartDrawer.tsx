@@ -1,9 +1,11 @@
 import { X, Minus, Plus, Trash2 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useLanguage } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
 
 const CartDrawer = () => {
     const { isCartOpen, setIsCartOpen, items, removeFromCart, updateQuantity, cartTotal } = useCart();
+    const { t } = useLanguage();
 
     if (!isCartOpen) return null;
 
@@ -20,7 +22,7 @@ const CartDrawer = () => {
 
                 {/* Header */}
                 <div className="p-6 flex justify-between items-center border-b border-gray-100">
-                    <h2 className="font-serif text-2xl text-feduzzi-dark">Winkelmandje</h2>
+                    <h2 className="font-serif text-2xl text-feduzzi-dark">{t('winkelmandje')}</h2>
                     <button onClick={() => setIsCartOpen(false)} className="hover:opacity-70">
                         <X size={24} />
                     </button>
@@ -30,12 +32,12 @@ const CartDrawer = () => {
                 <div className="flex-1 overflow-y-auto p-6 space-y-6">
                     {items.length === 0 ? (
                         <div className="text-center text-gray-500 mt-10 font-sans">
-                            <p>Je winkelmandje is nog leeg.</p>
+                            <p>{t('winkelmandje_leeg')}</p>
                             <button
                                 onClick={() => setIsCartOpen(false)}
                                 className="mt-4 text-feduzzi-red hover:underline"
                             >
-                                Verder winkelen
+                                {t('verder_winkelen')}
                             </button>
                         </div>
                     ) : (
@@ -81,7 +83,7 @@ const CartDrawer = () => {
                 {items.length > 0 && (
                     <div className="p-6 border-t border-gray-100 bg-gray-50">
                         <div className="flex justify-between items-center mb-6 font-serif text-xl">
-                            <span>Totaal</span>
+                            <span>{t('totaal')}</span>
                             <span>€{cartTotal.toFixed(2)}</span>
                         </div>
                         <Link
@@ -89,7 +91,7 @@ const CartDrawer = () => {
                             onClick={() => setIsCartOpen(false)}
                             className="block w-full bg-feduzzi-red text-white text-center py-4 uppercase tracking-widest text-sm font-bold hover:bg-feduzzi-red-hover transition-colors rounded-sm"
                         >
-                            Afrekenen
+                            {t('afrekenen')}
                         </Link>
                     </div>
                 )}

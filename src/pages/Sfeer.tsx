@@ -1,4 +1,5 @@
 import { IMAGES } from '../constants/images';
+import { useLanguage } from '../context/LanguageContext';
 
 const GALLERY_IMAGES = [
     { src: IMAGES.shelf, alt: "Winkel sfeer" },
@@ -12,14 +13,16 @@ const GALLERY_IMAGES = [
 ];
 
 const Sfeer = () => {
+    const { t } = useLanguage();
+
     return (
         <div className="pt-32 pb-20 px-4 md:px-8 bg-white min-h-screen">
             <div className="max-w-7xl mx-auto text-center">
                 <h1 className="font-serif text-4xl md:text-5xl text-feduzzi-red mb-8 font-light">
-                    De Sfeer
+                    {t('sfeer_titel')}
                 </h1>
                 <p className="font-sans text-gray-700 mb-16 max-w-2xl mx-auto leading-relaxed">
-                    Beleef de authentieke Italiaanse sfeer in onze winkels. Van de geur van verse kruiden tot het geluid van Italiaanse muziek op de achtergrond.
+                    {t('sfeer_desc')}
                 </p>
 
                 <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">

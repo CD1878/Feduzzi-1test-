@@ -7,7 +7,7 @@ const OverOns = () => {
     return (
         <div className="bg-white min-h-screen">
             {/* Hero Section - Playful Layout */}
-            <div className="pt-8 pb-16 px-4 md:px-8 bg-feduzzi-cream relative overflow-hidden">
+            <div className="pt-24 pb-16 px-4 md:px-8 bg-feduzzi-cream relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-1/3 h-full bg-feduzzi-olive/10 rounded-l-full hidden lg:block"></div>
 
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
@@ -54,12 +54,12 @@ const OverOns = () => {
 
                     <div className="flex-1 relative mt-8 md:mt-0">
                         <div className="relative z-10 transform -rotate-1 hover:rotate-0 transition-transform duration-500">
-                            <img src={IMAGES.shelf} alt="Nick & Nees" className="w-full h-[500px] object-cover rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-500" />
+                            <img src={IMAGES.chefs} alt="Nick & Nees" className="w-full h-[500px] object-cover rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-500" />
 
                             <div className="absolute -bottom-8 -right-8 bg-white p-5 rounded-xl shadow-xl max-w-xs border-l-4 border-feduzzi-red hidden md:block transform rotate-2 text-feduzzi-dark">
-                                <h4 className="font-serif text-lg text-feduzzi-dark mb-1">{t('onze_dolci')}</h4>
+                                <h4 className="font-serif text-lg text-feduzzi-dark mb-1">{t('wist_je_dat_titel')}</h4>
                                 <p className="text-xs text-gray-600 italic">
-                                    {t('dolci_tekst')}
+                                    {t('wist_je_dat_text')}
                                 </p>
                             </div>
                         </div>
@@ -68,7 +68,7 @@ const OverOns = () => {
             </section>
 
             {/* Green Quote Section - Compact */}
-            <div className="bg-[#7F9F7B] text-white py-16 px-4 border-t border-white/10">
+            <div className="bg-feduzzi-red text-white py-16 px-4 border-t border-white/10">
                 <div className="max-w-3xl mx-auto text-center">
                     <h2 className="font-serif text-2xl md:text-4xl leading-tight italic text-white drop-shadow-md">
                         “In cucina si buttano le briglie della creatività”
@@ -81,7 +81,7 @@ const OverOns = () => {
                 <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div className="order-2 md:order-1 relative group">
                         <div className="absolute -top-3 -left-3 w-full h-full bg-feduzzi-olive/20 rounded-2xl z-0 transition-all duration-500 group-hover:top-3 group-hover:left-3"></div>
-                        <img src={IMAGES.pasta} alt="Verse Pasta" className="relative z-10 w-full h-[400px] object-cover rounded-2xl shadow-md group-hover:shadow-xl transition-all duration-300" />
+                        <img src={IMAGES.chefs} alt="Het Feduzzi Team" className="relative z-10 w-full h-[400px] object-cover rounded-2xl shadow-md group-hover:shadow-xl transition-all duration-300" />
                     </div>
 
                     <div className="order-1 md:order-2 space-y-5">

@@ -27,7 +27,7 @@ const Footer = () => {
                     <div className="flex flex-col space-y-4">
                         <h4 className="font-serif text-2xl mb-2 text-white/90">{t('menu')}</h4>
                         <Link to="/menu" className="hover-underline-animation w-fit mx-auto md:mx-0 hover:text-feduzzi-olive transition-colors duration-300">{t('maaltijden')}</Link>
-                        <Link to="/menu" className="hover-underline-animation w-fit mx-auto md:mx-0 hover:text-feduzzi-olive transition-colors duration-300">Broodjes</Link>
+                        <Link to="/menu" className="hover-underline-animation w-fit mx-auto md:mx-0 hover:text-feduzzi-olive transition-colors duration-300">{t('broodjes_plain')}</Link>
                         <Link to="/menu" className="hover-underline-animation w-fit mx-auto md:mx-0 hover:text-feduzzi-olive transition-colors duration-300">{t('traiteur')}</Link>
                         <Link to="/catering" className="hover-underline-animation w-fit mx-auto md:mx-0 hover:text-feduzzi-olive transition-colors duration-300">{t('catering')}</Link>
                     </div>
@@ -52,7 +52,7 @@ const Footer = () => {
                 {/* Copyright */}
                 <div className="mt-20 text-[10px] md:text-xs text-center opacity-80 font-sans tracking-wide">
                     <p>
-                        Cookieverklaring | Privacyverklaring | © 2026 Feduzzi. All rights reserved | Made by <a href="#" className="underline">Chef Digital</a>
+                        {t('cookie_privacy')} | © 2026 Feduzzi. {t('all_rights')} | Made by <a href="#" className="underline">Chef Digital</a>
                     </p>
                 </div>
 

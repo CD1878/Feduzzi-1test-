@@ -1,24 +1,27 @@
 import { Link } from 'react-router-dom';
 import { IMAGES } from '../constants/images';
+import { useLanguage } from '../context/LanguageContext';
 
 const Intro = () => {
+    const { t } = useLanguage();
+
     return (
         <section className="py-20 px-4 md:px-8 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16 max-w-4xl mx-auto">
                     <h2 className="text-feduzzi-red font-serif text-3xl md:text-4xl mb-4">
-                        Feduzzi Mercato Italiano
+                        {t('intro_title')}
                     </h2>
                     <div className="h-10 w-px bg-black mx-auto mb-6"></div>
                     <div className="font-sans text-gray-700 leading-relaxed text-lg space-y-6">
                         <p>
-                            Feduzzi Mercato Italiano is een Italiaanse delicatessenwinkel, lunchroom en traiteur in één. Feduzzi heeft zich in 1981 gevestigd in Amsterdam en is sinds 2022 overgenomen door Nick en Nees.
+                            {t('intro_p1')}
                         </p>
                         <p>
-                            Feduzzi staat voor kwaliteit en gastvrijheid. Ons doel is dan ook om u thuis te laten voelen in onze winkel, zodat u niet alleen een boodschap komt halen, maar ook een ervaring rijker bent. Denk aan Italiaanse vlees-, vis- en vegagerechten, maar ook aan een rijk assortiment Italiaanse delicatessen die u niet snel ergens anders tegenkomt.
+                            {t('intro_p2')}
                         </p>
                         <p>
-                            Vriendelijk personeel, Italiaanse muziek en een prachtige winkels in <Link to="/vestigingen" className="underline hover:text-feduzzi-red">Amsterdam</Link> en <Link to="/vestigingen" className="underline hover:text-feduzzi-red">Laren</Link> waar het lijkt alsof u echt in Italië bent. Wij staan voor u klaar. Wanneer zien wij u bij ons in de winkel?
+                            {t('intro_p3_start')}<Link to="/vestigingen" className="underline hover:text-feduzzi-red">Amsterdam</Link>{t('intro_p3_mid')}<Link to="/vestigingen" className="underline hover:text-feduzzi-red">Laren</Link>{t('intro_p3_end')}
                         </p>
                     </div>
                 </div>
@@ -53,7 +56,7 @@ const Intro = () => {
 
                 <div className="text-center">
                     <Link to="/over-ons" className="bg-feduzzi-red hover:bg-feduzzi-red-hover text-white px-10 py-4 uppercase text-xs font-bold tracking-widest transition-colors rounded-sm inline-block">
-                        Meer over ons
+                        {t('meer_over_ons')}
                     </Link>
                 </div>
             </div>

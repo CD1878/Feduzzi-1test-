@@ -2,40 +2,42 @@ import { MapPin, Phone, Clock, Navigation } from 'lucide-react';
 import { IMAGES } from '../constants/images';
 import { useLanguage } from '../context/LanguageContext';
 
-const LOCATIONS = [
-    {
-        city: "Amsterdam",
-        address: "Scheldestraat 63",
-        zip: "1078 GH Amsterdam",
-        phone: "020-6646365",
-        email: "info@feduzzi.nl",
-        hours: [
-            "Maandag - Vrijdag: 10:30 - 18:00",
-            "Zaterdag: 10:00 - 17:00",
-            "Zondag: Gesloten"
-        ],
-        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2437.666636737337!2d4.8911223!3d52.3405786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6098020555555%3A0x676767676767!2sFeduzzi!5e0!3m2!1snl!2snl!4v1600000000000!5m2!1snl!2snl",
-        image: IMAGES.shelf // Placeholder
-    },
-    {
-        city: "Laren",
-        address: "Torenlaan 8",
-        zip: "1251 HJ Laren",
-        phone: "0622038090",
-        email: "laren@feduzzi.nl",
-        hours: [
-            "Maandag: 11:00 - 18:30",
-            "Dinsdag - Vrijdag: 10:00 - 18:30",
-            "Zaterdag: 10:00 - 17:00",
-            "Zondag: Gesloten"
-        ],
-        mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.0560877990176!2d5.224376376916854!3d52.25757757200583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c616f7311d4d3d%3A0x1c8b9d3b38150f81!2sNieuweweg%2012%2C%201251%20LJ%20Laren!5e0!3m2!1snl!2snl!4v1709123456789!5m2!1snl!2snl",
-        image: IMAGES.serviceCatering // Placeholder
-    }
-];
+
 
 const Vestigingen = () => {
     const { t } = useLanguage();
+
+    const LOCATIONS = [
+        {
+            city: "Amsterdam",
+            address: "Scheldestraat 63",
+            zip: "1078 GH Amsterdam",
+            phone: "020-6646365",
+            email: "info@feduzzi.nl",
+            hours: [
+                `${t('maandag')} - ${t('vrijdag')}: 10:30 - 18:00`,
+                `${t('zaterdag')}: 10:00 - 17:00`,
+                `${t('zondag')}: ${t('gesloten')}`
+            ],
+            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2437.666636737337!2d4.8911223!3d52.3405786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6098020555555%3A0x676767676767!2sFeduzzi!5e0!3m2!1snl!2snl!4v1600000000000!5m2!1snl!2snl",
+            image: IMAGES.shelf // Placeholder
+        },
+        {
+            city: "Laren",
+            address: "Torenlaan 8",
+            zip: "1251 HJ Laren",
+            phone: "0622038090",
+            email: "laren@feduzzi.nl",
+            hours: [
+                `${t('maandag')}: 11:00 - 18:30`,
+                `${t('dinsdag')} - ${t('vrijdag')}: 10:00 - 18:30`,
+                `${t('zaterdag')}: 10:00 - 17:00`,
+                `${t('zondag')}: ${t('gesloten')}`
+            ],
+            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.0560877990176!2d5.224376376916854!3d52.25757757200583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c616f7311d4d3d%3A0x1c8b9d3b38150f81!2sNieuweweg%2012%2C%201251%20LJ%20Laren!5e0!3m2!1snl!2snl!4v1709123456789!5m2!1snl!2snl",
+            image: IMAGES.serviceCatering // Placeholder
+        }
+    ];
 
     return (
         <div className="bg-white">
@@ -74,9 +76,6 @@ const Vestigingen = () => {
                         {/* Info Card */}
                         <div className="flex-1 w-full">
                             <h2 className="font-serif text-4xl md:text-5xl text-feduzzi-dark mb-8 flex items-center gap-4">
-                                <span className="bg-feduzzi-olive text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-md">
-                                    {index + 1}
-                                </span>
                                 {loc.city}
                             </h2>
 
@@ -163,7 +162,7 @@ const Vestigingen = () => {
                                 <label className="block text-xs font-bold uppercase text-gray-500 mb-2">{t('onderwerp')}</label>
                                 <select className="w-full p-4 bg-gray-50 border-2 border-transparent focus:border-feduzzi-olive focus:bg-white transition-all outline-none rounded-lg">
                                     <option>{t('algemene_vraag')}</option>
-                                    <option>Catering</option>
+                                    <option>{t('catering_optie')}</option>
                                     <option>{t('sollicitatie')}</option>
                                     <option>{t('overig')}</option>
                                 </select>

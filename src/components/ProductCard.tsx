@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Plus, Minus, User, Scale } from 'lucide-react';
 import { Product } from '../data/products';
 import { useCart } from '../context/CartContext';
+import { useLanguage } from '../context/LanguageContext';
 
 interface ProductCardProps {
     product: Product;
@@ -9,6 +10,7 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
     const { addToCart } = useCart();
+    const { t } = useLanguage();
     const [quantity, setQuantity] = useState(1);
 
     const handleIncrement = () => setQuantity(prev => prev + 1);
@@ -50,7 +52,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
                         {product.serves && (
                             <div className="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded">
                                 <User size={14} className="text-feduzzi-olive" />
-                                <span>{product.serves === 1 ? '1 persoon' : `${product.serves} personen`}</span>
+                                <span>{product.serves === 1 ? `1 ${t('persoon')}` : `${product.serves} ${t('personen')}`}</span>
                             </div>
                         )}
                     </div>
@@ -85,7 +87,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
                             onClick={handleAddToCart}
                             className="flex-1 flex justify-center items-center gap-2 bg-feduzzi-dark border border-transparent hover:bg-feduzzi-olive text-white px-4 py-2.5 rounded-sm text-xs uppercase tracking-wider font-bold transition-all duration-300 h-10 shadow-sm hover:shadow-md"
                         >
-                            In Winkelmand
+                            {t('in_winkelmand')}
                         </button>
                     </div>
                 </div>

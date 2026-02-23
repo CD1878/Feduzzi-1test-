@@ -14,8 +14,7 @@ import Checkout from './pages/Checkout';
 import OrderSuccess from './pages/OrderSuccess';
 import AdminDashboard from './pages/AdminDashboard';
 
-// Placeholder for Catering page
-const Catering = () => <div className="pt-32 text-center text-2xl font-serif">Catering Page (Coming Soon)</div>;
+import Catering from './pages/Catering';
 
 import ScrollToTop from './components/ScrollToTop';
 
